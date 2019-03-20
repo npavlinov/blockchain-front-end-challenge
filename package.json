@@ -1,0 +1,40 @@
+{
+  "name": "blockchain-front-end-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server/bin/www --ignore client/public",
+    "webpack:dev": "webpack -wd",
+    "dev": "npm-run-all -p start webpack:dev"
+  },
+  "repository": "https://github.com/npavlinov/blockchain-front-end-challenge.git",
+  "author": "npavlinov <nplyubomirov1@sheffield.ac.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "css-loader": "^2.1.1",
+    "express": "^4.16.4",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.15.3",
+    "eslint-plugin-react": "^7.12.4",
+    "nodemon": "^1.18.10",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}
