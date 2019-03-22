@@ -5,10 +5,11 @@ import React from 'react';
 import {renderToString} from 'react-dom/server';
 import App from '../client/src/components/App';
 import { StaticRouter } from 'react-router-dom';
-
+import cors from 'cors';
 
 const server = express();
 
+server.use(cors());
 server.use(express.static(path.resolve(__dirname, '../client/public')));
 
 server.get('*', (req, res) => {

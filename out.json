@@ -1,0 +1,91 @@
+{
+  "ver": 1,
+  "inputs": [
+      {
+          "sequence": 4294967295,
+          "witness": "",
+          "prev_out": {
+              "spent": true,
+              "spending_outpoints": [
+                  {
+                      "tx_index": 4391284,
+                      "n": 0
+                  }
+              ],
+              "tx_index": 4386298,
+              "type": 0,
+              "addr": "1ETBbsHPvbydW7hGWXXKXZ3pxVh3VFoMaX", // който изпраща
+              "value": 201153999,
+              "n": 0,
+              "script": "76a914938d4cb228b4b3fb294760a7f2bcdfee8bda7b2a88ac"
+          },
+          "script": "4730440220d32749cd81f6a0d15bb83b6882045c8020459d04bae38d7603117d26220f155e0220eea4dbf89e822324c58307fba71a70d5be82746f5b952b9e47be17f1cb3cd53b014104c46d6462f67f990211d3a7077f005e67154f5f785b3edc06af3de62649a15bad35905fa7af9f272f80379a41525ad57a2245c2edc4807e3e49f43eb1c1b11979"
+      },
+      {
+          "sequence": 4294967295,
+          "witness": "",
+          "prev_out": {
+              "spent": true,
+              "spending_outpoints": [
+                  {
+                      "tx_index": 4391284,
+                      "n": 1
+                  }
+              ],
+              "tx_index": 4387918,
+              "type": 0,
+              "addr": "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F",
+              "value": 4678300000,
+              "n": 1,
+              "script": "76a914660d4ef3a743e3e696ad990364e555c271ad504b88ac"
+          },
+          "script": "4730440220be57a3a79c5d38766059998e8eb18f32ec25676bd0f573f5fafb0d497db517a10220af7d8cb0e78331d08f8d443129f8e28e0632fa0a87bd8ce8f8119346c629d1e4014104cc71eb30d653c0c3163990c47b976f3fb3f37cccdcbedb169a1dfef58bbfbfaff7d8a473e7e2e6d317b87bafe8bde97e3cf8f065dec022b51d11fcdd0d348ac4"
+      }
+  ],
+  "weight": 1744,
+  "block_height": 183579,
+  "relayed_by": "127.0.0.1",
+  "out": [
+      {
+          "addr_tag_link": "http://satoshidice.com",
+          "addr_tag": "SatoshiDICE 48%",
+          "spent": true,
+          "spending_outpoints": [
+              {
+                  "tx_index": 4391422,
+                  "n": 0
+              }
+          ],
+          "tx_index": 4391284,
+          "type": 0,
+          "addr": "1dice8EMZmqKvrGE4Qc9bUFf9PX3xaYDp", // който получава
+          "value": 800000000,
+          "n": 0,
+          "script": "76a91406f1b66ffe49df7fce684df16c62f59dc9adbd3f88ac"
+      },
+      {
+          "spent": true,
+          "spending_outpoints": [
+              {
+                  "tx_index": 4392628,
+                  "n": 3
+              }
+          ],
+          "tx_index": 4391284,
+          "type": 0,
+          "addr": "1ETBbsHPvbydW7hGWXXKXZ3pxVh3VFoMaX",
+          "value": 4079453999,
+          "n": 1,
+          "script": "76a914938d4cb228b4b3fb294760a7f2bcdfee8bda7b2a88ac"
+      }
+  ],
+  "lock_time": 0,
+  "size": 436,
+  "double_spend": false,
+  "block_index": 243290,
+  "time": 1339171134,
+  "tx_index": 4391284,
+  "vin_sz": 2,
+  "hash": "b357ef869a27affd4442e57367396dc404b5757da117d8903ef196fd021b57bc",
+  "vout_sz": 2
+}

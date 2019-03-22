@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter as Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import routes from '../routes';
 
 export default class App extends Component {
