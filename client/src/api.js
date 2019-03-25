@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const fetchAddress = address => {
-  return axios.get(`https://blockchain.info/rawaddr/${address}`)
-              .then(resp => resp.data);
+  return axios.get(`https://blockchain.info/rawaddr/${address}?cors=true`)
+  .then(resp => resp.data);
 }
 
 export const fetchTransaction = transaction => {

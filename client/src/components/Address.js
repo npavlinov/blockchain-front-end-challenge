@@ -4,20 +4,25 @@ import * as api from '../api';
 
 export default class Address extends Component {
 
+  
+
   state = {
+    address: this.props.match.params.address,
     results: []
   }
 
-  componentDidMount() {
-    this.setState({
-      results: api.fetchAddress(this.props.match.params)
-    })
+  async componentDidMount() {
+    await api.fetchAddress(this.state.address)
+      .then(results => this.setState({
+        results
+      }))
+      .catch(err => console.log(err));
+    await console.log(this.state.results);
   }
 
   render() {
     return (
       <div>
-        {console.log(this.state.results)}
       </div>
     )
   }
