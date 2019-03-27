@@ -3,6 +3,10 @@ $light-blue: #4BA9EC;
 
 @import '~bootstrap/scss/bootstrap';
 
+.addr {
+  background-color: rgba($light-blue, 0.5);
+  border-radius: 3px;
+}
 
 .jumbotron {
   padding: 1rem 1rem;
@@ -71,14 +75,25 @@ hr {
   }
 }
 
-.hash {
+.long-text {
   // width: 600px;
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
 }
 
+.value { 
+  text-align: right;
+}
+
+@media screen and (max-width: 991px) {
+  p {
+    font-size: 12px;
+  }
+}
+
 @media screen and (max-width: 800px) {
+
   .search-bar {
     width: 80%;
     -webkit-box-shadow: none;
