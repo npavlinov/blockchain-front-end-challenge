@@ -29,7 +29,7 @@ export default class Transaction extends Component {
         </Row>
         <hr className="mb-4"></hr>
         <Row>
-          <Col sm={6}>
+          <Col>
             {this.props.tx.inputs.map(input => (
               <Row className="addr">
                 <Col>
@@ -40,6 +40,9 @@ export default class Transaction extends Component {
                 </Col>
               </Row>
             ))}
+          </Col>
+          <Col>
+              asd
           </Col>
         </Row>
       </Jumbotron>
