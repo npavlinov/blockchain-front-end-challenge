@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Row, Col, Jumbotron, Alert} from 'react-bootstrap';
+import {Row, Col, Jumbotron} from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 export default class Transaction extends Component {
 
@@ -31,12 +32,12 @@ export default class Transaction extends Component {
         <Row>
           <Col>
             {this.props.tx.inputs.map(input => (
-              <Row className="addr">
-                <Col>
-                  <p className="long-text" key={input.tx_index}>{input.prev_out.addr}</p>
+              <Row key={input.tx_index}>
+                <Col sm={7}>
+                  <p className="long-text">{input.prev_out.addr}</p>
                 </Col>
-                <Col>
-                  <p className="value" key={input.tx_index}>{input.prev_out.value/100000000} BTC</p>
+                <Col sm={5}>
+                  <p className="value">{input.prev_out.value/100000000} BTC</p>
                 </Col>
               </Row>
             ))}
@@ -48,4 +49,8 @@ export default class Transaction extends Component {
       </Jumbotron>
     )
   }
+}
+
+Transaction.propTypes = {
+  tx: PropTypes.array.isRequired,
 }
