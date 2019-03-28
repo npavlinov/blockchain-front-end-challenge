@@ -23,7 +23,7 @@ class Home extends Component {
     // this.props.history.push(`/address/${this.state.query}`);
     api.fetchAddress(this.state.query).then(results =>
     this.setState({
-      results 
+      results
     }))
     .catch(err => console.log(err));
   }
@@ -38,9 +38,9 @@ class Home extends Component {
             placeholder="Search"
             ref={FormControl => this.search = FormControl}
             onChange={this.handleChange} />
-          <Button className="search-button" type="submit"><b>FIND PROJECTS</b></Button>
+          <Button className="search-button" type="submit"><b>SEARCH</b></Button>
         </Form>
-        { this.state.results && 
+        { this.state.results &&
           this.state.results.txs.map(
             (tx) => <Transaction key={tx.tx_index} tx={tx} />
           )

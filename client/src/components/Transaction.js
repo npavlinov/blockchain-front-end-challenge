@@ -32,20 +32,32 @@ export default class Transaction extends Component {
         <Row>
           <Col>
             {this.props.tx.inputs.map(input => (
-              <Row key={input.tx_index}>
-                <Col sm={7}>
+              <Row key={input.tx_index} className="addr">
+                <Col sm={9}>
                   <p className="long-text">{input.prev_out.addr}</p>
                 </Col>
-                <Col sm={5}>
-                  <p className="value">{input.prev_out.value/100000000} BTC</p>
+                <Col sm={3}>
+                  <p className="value long-text">{input.prev_out.value/100000000} BTC</p>
                 </Col>
               </Row>
             ))}
           </Col>
+          <i className="fas fa-arrow-right align-self-center"></i>
           <Col>
-              asd
+            {this.props.tx.out.map(out => (
+              <Row key={out.tx_index} className="addr">
+              <Col sm={9}>
+                <p className="long-text">{out.addr}</p>
+              </Col>
+              <Col sm={3}>
+                <p className="value long-text">{out.value/100000000} BTC</p>
+              </Col>
+            </Row>
+            ))}
           </Col>
         </Row>
+        <hr className="mb-3"></hr>
+        <p className="btc-value">{this.props.tx.out.reduce((acc, out) => acc + out.value, 0)/100000000}</p>
       </Jumbotron>
     )
   }

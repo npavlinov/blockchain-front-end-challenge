@@ -3,10 +3,16 @@ $light-blue: #4BA9EC;
 
 @import '~bootstrap/scss/bootstrap';
 
+p {
+  margin: 0;
+}
+
 .addr {
-  background-color: rgba($light-blue, 0.5);
+  background-color: rgba($light-blue, 0.245);
+  border: 1px solid rgba($light-blue, 0.178);
   border-radius: 3px;
-  margin: 0 0 0 1rem;
+  margin: 0 0 15px 0;
+  padding: 5px 0;
 }
 
 .jumbotron {
@@ -18,7 +24,7 @@ $light-blue: #4BA9EC;
   -webkit-box-shadow: 0px 0px 61px 2px rgba(0,0,0,0.05);
   -moz-box-shadow: 0px 0px 61px 2px rgba(0,0,0,0.05);
   box-shadow: 0px 0px 61px 2px rgba(0,0,0,0.05);
-  
+
 }
 
 hr {
@@ -83,8 +89,16 @@ hr {
   text-overflow: ellipsis;
 }
 
-.value { 
+.value {
   text-align: right;
+}
+
+.btc-value {
+  background-color: $dark-blue;
+  color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+  right: 0;
 }
 
 @media screen and (max-width: 991px) {
