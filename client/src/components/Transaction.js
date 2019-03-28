@@ -11,7 +11,6 @@ export default class Transaction extends Component {
   componentDidMount() {
     const txEpoch = this.props.tx.time * 1000;
     const d = new Date(txEpoch);
-    console.log(d)
     this.setState({
       date: d.toLocaleString()
     })
@@ -31,8 +30,8 @@ export default class Transaction extends Component {
         <hr className="mb-4"></hr>
         <Row>
           <Col>
-            {this.props.tx.inputs.map(input => (
-              <Row key={input.tx_index} className="addr">
+            {this.props.tx.inputs.map((input, key) => (
+              <Row key={key} className="addr">
                 <Col sm={9}>
                   <p className="long-text">{input.prev_out.addr}</p>
                 </Col>
@@ -44,8 +43,8 @@ export default class Transaction extends Component {
           </Col>
           <i className="fas fa-arrow-right align-self-center"></i>
           <Col>
-            {this.props.tx.out.map(out => (
-              <Row key={out.tx_index} className="addr">
+            {this.props.tx.out.map((out, key) => (
+              <Row key={key} className="addr">
               <Col sm={9}>
                 <p className="long-text">{out.addr}</p>
               </Col>
@@ -57,12 +56,12 @@ export default class Transaction extends Component {
           </Col>
         </Row>
         <hr className="mb-3"></hr>
-        <p className="btc-value text-right bg-dark">{this.props.tx.out.reduce((acc, out) => acc + out.value, 0)/100000000}</p>
+        <span className="btc-value">{this.props.tx.out.reduce((acc, out) => acc + out.value, 0)/100000000} BTC</span>
       </Jumbotron>
     )
   }
 }
 
 Transaction.propTypes = {
-  tx: PropTypes.array.isRequired,
+  tx: PropTypes.object.isRequired,
 }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Form, FormControl, Button, Container} from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
 import * as api from '../api';
 import Transaction from './Transaction'
+import Profile from './Profile';
 
-class Home extends Component {
+export default class Home extends Component {
   state = {
     query: '',
     results: null,
@@ -20,7 +20,6 @@ class Home extends Component {
 
   handleSubmit = () => {
     event.preventDefault();
-    // this.props.history.push(`/address/${this.state.query}`);
     api.fetchAddress(this.state.query).then(results =>
     this.setState({
       results
@@ -41,9 +40,12 @@ class Home extends Component {
           <Button className="search-button" type="submit"><b>SEARCH</b></Button>
         </Form>
         { this.state.results &&
-          this.state.results.txs.map(
-            (tx) => <Transaction key={tx.tx_index} tx={tx} />
-          )
+          <div>
+            <Profile profile={this.state.results} />
+            {this.state.results.txs.map(
+              (tx) => <Transaction key={tx.tx_index} tx={tx} />
+            )}
+          </div>
         }
       </Container>
     )
@@ -53,7 +55,3 @@ class Home extends Component {
 Home.propTypes = {
   history: PropTypes.object.isRequired,
 }
-
-// <h1 key={txs.tx_index}>{txs.tx_index}</h1>
-
-export default withRouter(Home);
