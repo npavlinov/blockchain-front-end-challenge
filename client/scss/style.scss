@@ -94,11 +94,13 @@ hr {
 }
 
 .btc-value {
-  background-color: $dark-blue;
+  // background-color: $dark-blue;
   color: #fff;
   border-radius: 3px;
   padding: 5px;
-  right: 0;
+  // width: 50px;
+  // display:inline-block;
+  // justify-content: right;
 }
 
 @media screen and (max-width: 991px) {

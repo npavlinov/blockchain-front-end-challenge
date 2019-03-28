@@ -57,7 +57,7 @@ export default class Transaction extends Component {
           </Col>
         </Row>
         <hr className="mb-3"></hr>
-        <p className="btc-value">{this.props.tx.out.reduce((acc, out) => acc + out.value, 0)/100000000}</p>
+        <p className="btc-value text-right bg-dark">{this.props.tx.out.reduce((acc, out) => acc + out.value, 0)/100000000}</p>
       </Jumbotron>
     )
   }
