@@ -5,7 +5,12 @@ export const fetchAddress = async address => {
   return resp.data;
 }
 
-export const fetchTransaction = async transaction => {
-  const resp = await axios.get(`https://blockchain.info/rawtx/${transaction}`);
-  return resp.data;
+export const fetchPrice = () => {
+  return axios.get(`https://blockchain.info/q/24hrprice`)
+              .then(resp => resp.data)
+}
+
+export const fetchCap = () => {
+  return axios.get(`https://blockchain.info/q/marketcap`)
+              .then(resp => resp.data)
 }

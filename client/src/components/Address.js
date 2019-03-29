@@ -16,7 +16,8 @@ export default class Address extends Component {
 
     componentDidMount() {
 
-      this.setState({loading: false})
+      // this.setState({loading: false})
+      setTimeout(() => this.setState({loading:false}), 1)
 
       this.btws.onopen = () => {
         console.log(`connected to: ${this.props.results.address}`);
@@ -43,10 +44,12 @@ export default class Address extends Component {
             <span className="sr-only">Loading...</span>
           </div>
         ) : (
-          <Profile profile={this.props.results} />,
-          this.state.transactions.map(
-            (tx) => <Transaction key={tx.tx_index} tx={tx} />
-          )
+          <div>
+            <Profile profile={this.props.results} />
+            {this.state.transactions.map(
+              (tx) => <Transaction key={tx.tx_index} tx={tx} />
+            )}
+          </div>
         )}
       </div>
     )

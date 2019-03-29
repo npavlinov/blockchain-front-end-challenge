@@ -107,6 +107,31 @@ hr {
   float: right;
 }
 
+.spinner-grow {
+  display: block;
+  margin: 0 auto;
+}
+
+.prices {
+  background-color: $dark-blue;
+  color: #fff;
+  p {
+    margin: 0 50px;
+    padding: 5px 0;
+  }
+  // overflow: hidden;
+
+  // p:nth-child(1) {
+  //   float: left;
+  //   margin-left: 50px;
+  // }
+
+  // p:nth-child(2) {
+  //   float: right;
+  //   margin-right: 50px;
+  // }
+}
+
 @media screen and (max-width: 991px) {
   p, span {
     font-size: 12px;
@@ -116,8 +141,8 @@ hr {
 @media screen and (max-width: 800px) {
 
   .search-bar {
-    margin: 0 auto;
-    // width: 80%;
+    // margin: 0 auto;
+    width: 80%;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Form, FormControl, Button, Container} from 'react-bootstrap';
 import * as api from '../api';
 import Address from './Address';
+import Bar from './Bar';
 
 export default class Home extends Component {
   state = {
@@ -27,20 +28,23 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Container>
-        <Form className="my-5 search-bar" inline onSubmit={this.handleSubmit}>
-          <FormControl
-            type="text"
-            className="search-text"
-            placeholder="Search"
-            ref={FormControl => this.search = FormControl}
-            onChange={this.handleChange} />
-          <Button className="search-button" type="submit"><b>SEARCH</b></Button>
-        </Form>
-        { this.state.results &&
-          <Address results={this.state.results} />
-        }
-      </Container>
+      <div>
+        <Bar />
+        <Container>
+          <Form className="my-5 mx-auto search-bar" inline onSubmit={this.handleSubmit}>
+            <FormControl
+              type="text"
+              className="search-text"
+              placeholder="Search"
+              ref={FormControl => this.search = FormControl}
+              onChange={this.handleChange} />
+            <Button className="search-button" type="submit"><b>SEARCH</b></Button>
+          </Form>
+          { this.state.results &&
+            <Address results={this.state.results} />
+          }
+        </Container>
+      </div>
     )
   }
 }
