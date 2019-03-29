@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Form, FormControl, Button, Container} from 'react-bootstrap';
 import * as api from '../api';
-import Transaction from './Transaction'
-import Profile from './Profile';
+import Address from './Address';
 
 export default class Home extends Component {
   state = {
     query: '',
     results: null,
-
   }
 
   handleChange = () => {
@@ -40,12 +38,7 @@ export default class Home extends Component {
           <Button className="search-button" type="submit"><b>SEARCH</b></Button>
         </Form>
         { this.state.results &&
-          <div>
-            <Profile profile={this.state.results} />
-            {this.state.results.txs.map(
-              (tx) => <Transaction key={tx.tx_index} tx={tx} />
-            )}
-          </div>
+          <Address results={this.state.results} />
         }
       </Container>
     )
