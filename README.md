@@ -9,7 +9,7 @@ Create a simple application using React and the Blockchain API that loads and di
 
 # Getting Started
 
-## Prerequisites
+Prerequisites
 ------
 
 ```
@@ -17,30 +17,30 @@ Node 10.15.3 LTS
 Browser, supporting WebSockets
 ```
 
-## Installing
+Installing
 ------
 
-## Yarn
+### Yarn
 ```
 yarn install
 ```
 
-## npm
+### npm
 
 ```
 npm install
 ```
 
-## Running the app
+Running the app
 ------
 
-## Yarn
+### Yarn
 
 ```
 yarn run dev
 ```
 
-## npm
+### npm
 
 ```
 npm run dev
