@@ -12,16 +12,11 @@ const server = express();
 
 server.use(cors());
 server.use(bodyParser.json());
-// server.use(cors(
-//     {
-//         "origin": 'http://localhost:3000',
-//         "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-//         "allowedHeaders": ['Content-Type', 'Authorization', 'Content-Length', 'X-Requested-With', 'Accept']
-//     })
-// );
-server.options('*', cors())
+
+// Serve static files
 server.use(express.static(path.resolve(__dirname, '../client/public')));
 
+// Render the server side
 server.get('*', (req, res) => {
     const context = {};
     const app = renderToString(
@@ -38,7 +33,6 @@ server.get('*', (req, res) => {
     }
 
     return res.send(
-        // res.set('Cache-Control', 'public, max-age=600, s-maxage=1200');
         data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
     );
     });

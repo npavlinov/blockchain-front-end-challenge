@@ -1,23 +1,25 @@
-import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {Form, FormControl, Button, Container} from 'react-bootstrap';
 import * as api from '../api';
 import Address from './Address';
 import Bar from './Bar';
 
 export default class Home extends Component {
+
   state = {
     query: '',
     results: null,
     error: false
   }
+
+  // get the search value
   handleChange = () => {
     this.setState({
       query: this.search.value
     });
   }
 
+  // call Blockchain API and handle any errors that might occur
   handleSubmit = () => {
     event.preventDefault();
     api.fetchAddress(this.state.query).then(results =>
@@ -31,6 +33,10 @@ export default class Home extends Component {
       });
     }
 
+  /*
+   * The component will display a top bar with prices, a search bar and after that
+   * the resulting address
+  */
   render() {
     return (
       <div>
@@ -55,8 +61,4 @@ export default class Home extends Component {
       </div>
     )
   }
-}
-
-Home.propTypes = {
-  history: PropTypes.object.isRequired,
 }

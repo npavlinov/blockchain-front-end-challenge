@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import '../scss/style.scss'
 import App from './components/App';
 
+// Server side rendering with React
 ReactDOM.hydrate(
     <BrowserRouter>
       <App />

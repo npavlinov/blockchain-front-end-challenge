@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import * as api from '../api';
 
+/**
+ * This component was not in the specifications, but I decided to add it
+ * for better visual appearance
+ */
 export default class Bar extends Component {
 
   state = {
