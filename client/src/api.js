@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 // Fetch BTC address from Blockchain API
-export const fetchAddress = async address => {
-  const resp = await axios.get(`https://blockchain.info/rawaddr/${address}?cors=true`);
-  return resp.data;
+export const fetchAddress = address => {
+  return axios.get(`https://blockchain.info/rawaddr/${address}?cors=true`)
+              .then(resp => resp.data)
 }
 
 // Fetch BTC price from Blockchain API
